@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #900;
+        }
+        .result {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .result h2 {
+            margin: 0;
+            color: #333;
+        }
+        .result p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Search Results</h1>
+    {% if results %}
+        {% for entry in results %}
+            <div class="result">
+                <p><strong>Location:</strong> {{ entry.location }}</p>
+                <p><strong>Year:</strong> {{ entry.year }}</p>
+                <p><strong>Speciality:</strong> {{ entry.specialty }}</p>
+                <p><strong>Need Statement:</strong> {{ entry.description }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No results found. Try different filters!</p>
+    {% endif %}
+    <a href="/">Back to Filter</a>
+</body>
+</html>
