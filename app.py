@@ -5,7 +5,6 @@ import os
 
 
 app = Flask(__name__, static_folder='public')
-app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
 
 # Function to load and parse data from data.txt
