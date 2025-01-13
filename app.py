@@ -4,7 +4,7 @@ import os
 
 
 
-app = Flask(__name__, static_folder='public')
+app = Flask(__name__, static_folder='static')
 
 
 # Function to load and parse data from data.txt
